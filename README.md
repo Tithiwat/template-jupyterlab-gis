@@ -8,6 +8,11 @@ docker build -t tithiwat/template-jupyterlab-gis:latest .
 docker run -p 8888:8888 tithiwat/template-jupyterlab-gis:latest
 ```
 
+or
+```
+docker run -p 8888:8888 -v $(pwd):/usr/src tithiwat/template-jupyterlab-gis:latest 
+```
+
 * default port of jupyterlab is 8888
 
 
