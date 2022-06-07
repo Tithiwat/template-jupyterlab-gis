@@ -24,6 +24,30 @@ or
 docker-compose up
 ```
 
+## For Authentication
+
+```
+jupyter-lab password
+```
+- Enter password 2 times then
+- Modify docker-compose.yml in section volume. For example
+```
+version: '3'
+services:
+    test:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: test
+        restart: unless-stopped
+        ports:
+          - 8888:8888
+        command: jupyter-lab --allow-root --ip 0.0.0.0
+        volumes:
+          - ./jupyter_server_config.json:/root/.jupyter/jupyter_server_config.json
+          - .:/usr/src
+```
+
 
 ### output while running
 ```
