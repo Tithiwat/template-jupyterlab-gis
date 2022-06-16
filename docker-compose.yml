@@ -10,4 +10,5 @@ services:
           - 8888:8888
         command: jupyter-lab --allow-root --ip 0.0.0.0
         volumes:
+          # - ./jupyter_server_config.json:/root/.jupyter/jupyter_server_config.json
           - .:/usr/src
