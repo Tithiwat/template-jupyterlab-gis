@@ -1,6 +1,13 @@
 # template-jupyterlab-gis
 Template Jupyerlab for GIS
 
+# TLDR ###
+```
+docker run -p 8888:8888 tithiwat/template-jupyterlab-gis
+```
+
+
+
 
 ### To use (docker command)
 ```
