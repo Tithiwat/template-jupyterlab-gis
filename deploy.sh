@@ -1,5 +1,5 @@
 #!/bin/bash
-VER=$(cat version.py)
+VERSION=$(cat version.py)
 docker-compose build
 docker tag tithiwat/template-jupyterlab-gis tithiwat/template-jupyterlab-gis:$VERSION
 docker push tithiwat/template-jupyterlab-gis:$VERSION
