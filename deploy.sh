@@ -1,7 +1,8 @@
 #!/bin/bash
 VERSION=$(cat version.py)
+CONTAINER_NAME="tithiwat/template-jupyterlab-gis"
 docker-compose build
-docker tag tithiwat/template-jupyterlab-gis tithiwat/template-jupyterlab-gis:$VERSION
-docker push tithiwat/template-jupyterlab-gis:$VERSION
-docker tag tithiwat/template-jupyterlab-gis:$VERSION tithiwat/template-jupyterlab-gis:latest
-docker push tithiwat/template-jupyterlab-gis:latest
+docker tag ${CONTAINER_NAME} tithiwat/template-jupyterlab-gis:$VERSION
+# docker push ${CONTAINER_NAME}:$VERSION
+docker tag ${CONTAINER_NAME}:$VERSION ${CONTAINER_NAME}:latest
+docker push ${CONTAINER_NAME}:latest
