@@ -9,10 +9,15 @@ RUN apt install -y software-properties-common
 RUN add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable
 RUN apt update -qq
 RUN apt install -y git gdal-bin libgdal-dev python3-gdal python3-pip python3-virtualenv curl unzip zip
-RUN pip3 install jupyterlab geojson seaborn geopandas
-RUN pip3 install --upgrade numpy
-RUN pip3 install --upgrade geopandas
+RUN pip3 install jupyterlab geojson seaborn
+# RUN pip3 install --upgrade numpy
+# RUN pip3 install --upgrade geopandas
+RUN pip3 install pygeos==0.13
+RUN pip3 install Shapely==2.0a1
 RUN pip3 install rasterio==1.2.10  # GDAL 3.0.4 compatibility
+RUN pip3 install Shapely==2.0a1
+RUN pip3 install geopandas
+RUN pip install geoparquet
 
 
 # install platform specfic openJDK
